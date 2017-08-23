@@ -4,8 +4,6 @@ class MainViewController: UIViewController {
     
     private let allAuthorsURL = "http://127.0.0.1:8080/authors/all"
     private let allGenresURL = "http://127.0.0.1:8080/genres/all"
-    @IBOutlet weak var showAuthors: UIButton!
-    @IBOutlet weak var showGenres: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,28 +34,24 @@ class MainViewController: UIViewController {
         task.resume()
     }
     
-    private func requestToGetAllGenres() -> [String] {
-        var result: [String] = []
+    private func requestToGetAllGenres(callback: @escaping (_ result: [String], _ error: Error?) -> ()) {
+        var processedResult: [String] = []
         let url = URL(string: allGenresURL)
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
-                self.present(Toast().showNegativeMessage(message: error!.localizedDescription), animated: true, completion: nil)
+                callback(processedResult, error)
                 return
             }
-            guard let data = data else {
-                print("Data is empty")
-                return
-            }
-            if let genresJson = try? JSONSerialization.jsonObject(with: data, options: []) as? [AnyObject] {
+            if let genresJson = try? JSONSerialization.jsonObject(with: data!, options: []) as? [AnyObject] {
                 for value in genresJson! {
                     if let genre = value["title"] as? String {
-                        result.append(genre)
+                        processedResult.append(genre)
                     }
                 }
             }
+            callback(processedResult, nil)
         }
         task.resume()
-        return result
     }
     
     @IBAction func showAuthorsTable(_ sender: UIButton) {
@@ -75,12 +69,19 @@ class MainViewController: UIViewController {
         }
     }
     
-//    @IBAction func showGenresTable(_ sender: UIButton) {
-//        let genres = requestToGetAllGenres()
-//        if !genres.isEmpty {
-//            let genresTable = GenreTableViewController()
-//            genresTable.setData(data: genres)
-//            self.present(genresTable, animated: true, completion: nil)
-//        }
-//    }
+    @IBAction func showGenresTable(_ sender: UIButton) {
+        requestToGetAllGenres() { (result, error) -> () in
+            DispatchQueue.main.async() {
+                if (error != nil) {
+                    self.present(Toast().showNegativeMessage(message: error!.localizedDescription), animated: true, completion: nil)
+                }
+                if !result.isEmpty {
+                    let genreController = self.storyboard?.instantiateViewController(withIdentifier: "GenreController") as! GenreController
+                    genreController.setData(data: result)
+                    self.navigationController?.pushViewController(genreController, animated: true)
+                }
+            }
+        }
+    }
+
 }

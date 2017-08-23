@@ -68,7 +68,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Choose"/>
                                 <connections>
-                                    <action selector="showGenresTable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tD3-Gq-Cra"/>
+                                    <action selector="showGenresTable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pyd-Sx-Xzc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHX-Lk-6ao">
@@ -83,7 +83,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Choose"/>
                                 <connections>
-                                    <action selector="showAuthorsTable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m6n-Nf-fxE"/>
+                                    <action selector="showAuthorsTable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Joc-UF-pOH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2n-LA-T0Z">
@@ -98,8 +98,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="Fuf-IM-nNh"/>
                     <connections>
-                        <outlet property="showAuthors" destination="b4f-iN-Tcd" id="cNq-gP-ycW"/>
-                        <outlet property="showGenres" destination="WdE-Vj-YP0" id="DEv-9p-2WO"/>
                         <segue destination="cdc-ad-paY" kind="show" id="52V-YH-3xU"/>
                         <segue destination="gQ5-nf-roP" kind="show" id="7dY-d6-v9x"/>
                     </connections>
@@ -108,16 +106,16 @@
             </objects>
             <point key="canvasLocation" x="856.79999999999995" y="-647.22638680659679"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Genre Controller-->
         <scene sceneID="j3j-0q-dNU">
             <objects>
-                <tableViewController id="1Lr-TW-CcR" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GenreController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Lr-TW-CcR" customClass="GenreController" customModule="OnlineLibraryIOSClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VHt-xt-VvU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KUP-8b-0W7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenreCell" id="KUP-8b-0W7">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KUP-8b-0W7" id="DqQ-qW-5UQ">

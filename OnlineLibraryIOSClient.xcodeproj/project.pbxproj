@@ -14,6 +14,7 @@
 		B30729EF1F4DB9F60006DCA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30729ED1F4DB9F60006DCA9 /* LaunchScreen.storyboard */; };
 		B37583CB1F4DBDCF00F2606A /* AuthorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37583CA1F4DBDCF00F2606A /* AuthorController.swift */; };
 		B37583CD1F4DC33B00F2606A /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37583CC1F4DC33B00F2606A /* Toast.swift */; };
+		B37583CF1F4E266900F2606A /* GenreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37583CE1F4E266900F2606A /* GenreController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B30729F01F4DB9F60006DCA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B37583CA1F4DBDCF00F2606A /* AuthorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorController.swift; sourceTree = "<group>"; };
 		B37583CC1F4DC33B00F2606A /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		B37583CE1F4E266900F2606A /* GenreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				B30729F01F4DB9F60006DCA9 /* Info.plist */,
 				B37583CA1F4DBDCF00F2606A /* AuthorController.swift */,
 				B37583CC1F4DC33B00F2606A /* Toast.swift */,
+				B37583CE1F4E266900F2606A /* GenreController.swift */,
 			);
 			path = OnlineLibraryIOSClient;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B37583CF1F4E266900F2606A /* GenreController.swift in Sources */,
 				B30729E71F4DB9F60006DCA9 /* MainViewController.swift in Sources */,
 				B30729E51F4DB9F60006DCA9 /* AppDelegate.swift in Sources */,
 				B37583CB1F4DBDCF00F2606A /* AuthorController.swift in Sources */,
