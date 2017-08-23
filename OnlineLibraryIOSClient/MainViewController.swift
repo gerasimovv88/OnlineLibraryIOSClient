@@ -16,31 +16,27 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    private func getAllAuthors() -> [String] {
-        var result: [String] = []
+    private func requestToGetAllAuthors(callback: @escaping (_ result: [String], _ error: Error?) -> ()) {
+        var processedResult: [String] = []
         let url = URL(string: allAuthorsURL)
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
-                self.present(Toast().showNegativeMessage(message: error!.localizedDescription), animated: true, completion: nil)
+                callback(processedResult, error)
                 return
             }
-            guard let data = data else {
-                print("Data is empty")
-                return
-            }
-            if let authorsJson = try? JSONSerialization.jsonObject(with: data, options: []) as? [AnyObject] {
+            if let authorsJson = try? JSONSerialization.jsonObject(with: data!, options: []) as? [AnyObject] {
                 for value in authorsJson! {
                     if let author = value["fio"] as? String {
-                        result.append(author)
+                        processedResult.append(author)
                     }
                 }
             }
+            callback(processedResult, nil)
         }
         task.resume()
-        return result
     }
     
-    private func getAllGenres() -> [String] {
+    private func requestToGetAllGenres() -> [String] {
         var result: [String] = []
         let url = URL(string: allGenresURL)
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
@@ -65,20 +61,26 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func showAuthorsTable(_ sender: UIButton) {
-        let authors = getAllAuthors()
-        if !authors.isEmpty {
-            let authorController = storyboard?.instantiateViewController(withIdentifier: "AuthorController") as! AuthorController
-            authorController.setData(data: authors)
-            navigationController?.pushViewController(authorController, animated: true)
+        requestToGetAllAuthors() { (result, error) -> () in
+            DispatchQueue.main.async() {
+                if (error != nil) {
+                    self.present(Toast().showNegativeMessage(message: error!.localizedDescription), animated: true, completion: nil)
+                }
+                if !result.isEmpty {
+                    let authorController = self.storyboard?.instantiateViewController(withIdentifier: "AuthorController") as! AuthorController
+                    authorController.setData(data: result)
+                    self.navigationController?.pushViewController(authorController, animated: true)
+                }
+            }
         }
     }
     
-    @IBAction func showGenresTable(_ sender: UIButton) {
-        let genres = getAllGenres()
-        if !genres.isEmpty {
+//    @IBAction func showGenresTable(_ sender: UIButton) {
+//        let genres = requestToGetAllGenres()
+//        if !genres.isEmpty {
 //            let genresTable = GenreTableViewController()
 //            genresTable.setData(data: genres)
 //            self.present(genresTable, animated: true, completion: nil)
-        }
-    }
+//        }
+//    }
 }
