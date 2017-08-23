@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		B30729E51F4DB9F60006DCA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30729E41F4DB9F60006DCA9 /* AppDelegate.swift */; };
-		B30729E71F4DB9F60006DCA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30729E61F4DB9F60006DCA9 /* ViewController.swift */; };
+		B30729E71F4DB9F60006DCA9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30729E61F4DB9F60006DCA9 /* MainViewController.swift */; };
 		B30729EA1F4DB9F60006DCA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30729E81F4DB9F60006DCA9 /* Main.storyboard */; };
 		B30729EC1F4DB9F60006DCA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B30729EB1F4DB9F60006DCA9 /* Assets.xcassets */; };
 		B30729EF1F4DB9F60006DCA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30729ED1F4DB9F60006DCA9 /* LaunchScreen.storyboard */; };
+		B37583CB1F4DBDCF00F2606A /* AuthorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37583CA1F4DBDCF00F2606A /* AuthorController.swift */; };
+		B37583CD1F4DC33B00F2606A /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37583CC1F4DC33B00F2606A /* Toast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B30729E11F4DB9F60006DCA9 /* OnlineLibraryIOSClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineLibraryIOSClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B30729E41F4DB9F60006DCA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B30729E61F4DB9F60006DCA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B30729E61F4DB9F60006DCA9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B30729E91F4DB9F60006DCA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B30729EB1F4DB9F60006DCA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B30729EE1F4DB9F60006DCA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B30729F01F4DB9F60006DCA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B37583CA1F4DBDCF00F2606A /* AuthorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorController.swift; sourceTree = "<group>"; };
+		B37583CC1F4DC33B00F2606A /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				B30729E41F4DB9F60006DCA9 /* AppDelegate.swift */,
-				B30729E61F4DB9F60006DCA9 /* ViewController.swift */,
+				B30729E61F4DB9F60006DCA9 /* MainViewController.swift */,
 				B30729E81F4DB9F60006DCA9 /* Main.storyboard */,
 				B30729EB1F4DB9F60006DCA9 /* Assets.xcassets */,
 				B30729ED1F4DB9F60006DCA9 /* LaunchScreen.storyboard */,
 				B30729F01F4DB9F60006DCA9 /* Info.plist */,
+				B37583CA1F4DBDCF00F2606A /* AuthorController.swift */,
+				B37583CC1F4DC33B00F2606A /* Toast.swift */,
 			);
 			path = OnlineLibraryIOSClient;
 			sourceTree = "<group>";
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B30729E71F4DB9F60006DCA9 /* ViewController.swift in Sources */,
+				B30729E71F4DB9F60006DCA9 /* MainViewController.swift in Sources */,
 				B30729E51F4DB9F60006DCA9 /* AppDelegate.swift in Sources */,
+				B37583CB1F4DBDCF00F2606A /* AuthorController.swift in Sources */,
+				B37583CD1F4DC33B00F2606A /* Toast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +307,7 @@
 				B30729F51F4DB9F60006DCA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
