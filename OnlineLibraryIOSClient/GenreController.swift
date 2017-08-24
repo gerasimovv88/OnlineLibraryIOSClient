@@ -17,7 +17,7 @@ class GenreController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Genres"
+        self.title = NSLocalizedString("Genres", comment: "")
         
         myTableView = UITableView(frame: UIScreen.main.bounds, style: UITableViewStyle.plain)
         myTableView.delegate = self

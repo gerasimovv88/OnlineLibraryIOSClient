@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "Genre"; ObjectID = "1Ig-4m-psi"; */
+"1Ig-4m-psi.text" = "Жанр";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "JHX-Lk-6ao"; */
+"JHX-Lk-6ao.normalTitle" = "Поиск";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "M2n-LA-T0Z"; */
+"M2n-LA-T0Z.text" = "Название";
+
+/* Class = "UIButton"; normalTitle = "Choose"; ObjectID = "WdE-Vj-YP0"; */
+"WdE-Vj-YP0.normalTitle" = "Выбрать";
+
+/* Class = "UIButton"; normalTitle = "Choose"; ObjectID = "b4f-iN-Tcd"; */
+"b4f-iN-Tcd.normalTitle" = "Выбрать";
+
+/* Class = "UILabel"; text = "Book search"; ObjectID = "fp4-vB-PWC"; */
+"fp4-vB-PWC.text" = "Поиск книг";
+
+/* Class = "UILabel"; text = "Author"; ObjectID = "ma2-yH-NVV"; */
+"ma2-yH-NVV.text" = "Автор";

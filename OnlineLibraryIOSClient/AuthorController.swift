@@ -17,7 +17,7 @@ class AuthorController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Authors"
+        self.title = NSLocalizedString("Authors", comment: "")
         
         myTableView = UITableView(frame: UIScreen.main.bounds, style: UITableViewStyle.plain)
         myTableView.delegate = self

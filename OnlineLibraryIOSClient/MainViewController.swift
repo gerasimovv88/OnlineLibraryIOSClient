@@ -10,7 +10,7 @@ class MainViewController: UIViewController, AuthorControllerDelegate, GenreContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Main menu"
+        self.title = NSLocalizedString("MainMenu", comment: "")
     }
     
     override func didReceiveMemoryWarning() {
