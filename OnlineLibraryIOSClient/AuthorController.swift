@@ -4,10 +4,15 @@ class AuthorController: UITableViewController {
     
     private var data: [String] = []
     private var myTableView: UITableView!
+    private var delegate: AuthorControllerDelegate?
     
     public func setData(data: [String]) {
         let sortedData: [String] = data.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         self.data = sortedData
+    }
+    
+    public func setDelegate(delegate: AuthorControllerDelegate?) {
+        self.delegate = delegate
     }
     
     override func viewDidLoad() {
@@ -26,7 +31,7 @@ class AuthorController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //selectValue(value: data[indexPath.row])
+        doWithSelectedValue(value: data[indexPath.row])
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,4 +43,13 @@ class AuthorController: UITableViewController {
         cell.textLabel!.text = "\(data[indexPath.row])"
         return cell
     }
+    
+    private func doWithSelectedValue(value: String) {
+        self.navigationController?.popViewController(animated: true)
+        delegate?.sendDataFromAuthorControllerToPrevController(value: value)
+    }
+}
+
+protocol AuthorControllerDelegate {
+    func sendDataFromAuthorControllerToPrevController(value: String)
 }

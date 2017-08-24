@@ -4,10 +4,15 @@ class GenreController: UITableViewController {
     
     private var data: [String] = []
     private var myTableView: UITableView!
+    private var delegate: GenreControllerDelegate?
     
     public func setData(data: [String]) {
         let sortedData: [String] = data.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         self.data = sortedData
+    }
+    
+    public func setDelegate(delegate: GenreControllerDelegate?) {
+        self.delegate = delegate
     }
     
     override func viewDidLoad() {
@@ -26,7 +31,7 @@ class GenreController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //selectValue(value: data[indexPath.row])
+        doWithSelectedValue(value: data[indexPath.row])
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,4 +43,13 @@ class GenreController: UITableViewController {
         cell.textLabel!.text = "\(data[indexPath.row])"
         return cell
     }
+    
+    private func doWithSelectedValue(value: String) {
+        self.navigationController?.popViewController(animated: true)
+        delegate?.sendDataFromGenreControllerToPrevController(value: value)
+    }
+}
+
+protocol GenreControllerDelegate {
+    func sendDataFromGenreControllerToPrevController(value: String)
 }

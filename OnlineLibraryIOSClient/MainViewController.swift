@@ -1,9 +1,12 @@
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, AuthorControllerDelegate, GenreControllerDelegate {
     
     private let allAuthorsURL = "http://127.0.0.1:8080/authors/all"
     private let allGenresURL = "http://127.0.0.1:8080/genres/all"
+
+    @IBOutlet weak var authorTextField: UITextField!
+    @IBOutlet weak var genreTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,6 +15,14 @@ class MainViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func sendDataFromAuthorControllerToPrevController(value: String) {
+        authorTextField.text = value
+    }
+    
+    func sendDataFromGenreControllerToPrevController(value: String) {
+        genreTextField.text = value
     }
     
     private func requestToGetAllAuthors(callback: @escaping (_ result: [String], _ error: Error?) -> ()) {
@@ -63,6 +74,7 @@ class MainViewController: UIViewController {
                 if !result.isEmpty {
                     let authorController = self.storyboard?.instantiateViewController(withIdentifier: "AuthorController") as! AuthorController
                     authorController.setData(data: result)
+                    authorController.setDelegate(delegate: self)
                     self.navigationController?.pushViewController(authorController, animated: true)
                 }
             }
@@ -78,6 +90,7 @@ class MainViewController: UIViewController {
                 if !result.isEmpty {
                     let genreController = self.storyboard?.instantiateViewController(withIdentifier: "GenreController") as! GenreController
                     genreController.setData(data: result)
+                    genreController.setDelegate(delegate: self)
                     self.navigationController?.pushViewController(genreController, animated: true)
                 }
             }

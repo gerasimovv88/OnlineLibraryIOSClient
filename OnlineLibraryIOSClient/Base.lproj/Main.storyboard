@@ -98,6 +98,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Fuf-IM-nNh"/>
                     <connections>
+                        <outlet property="authorTextField" destination="LsA-ie-Tpx" id="Zg1-vb-Hci"/>
+                        <outlet property="genreTextField" destination="hWP-sp-t7o" id="H9i-N6-DP3"/>
                         <segue destination="cdc-ad-paY" kind="show" id="52V-YH-3xU"/>
                         <segue destination="gQ5-nf-roP" kind="show" id="7dY-d6-v9x"/>
                     </connections>
