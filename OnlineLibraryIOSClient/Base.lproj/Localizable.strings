@@ -4,3 +4,17 @@
 "Successful" = "Successful";
 "MainMenu" = "Main menu";
 "OK" = "OK";
+"NotFound" = "No book was found";
+"FindedBooks" = "Finded books";
+"Title" = "Title";
+"Author" = "Author";
+"Genre" = "Genre";
+"InformationNotAvailable" = "Information about this book not available";
+"ShowInformationAboutBook" = "Show information about book";
+"Year" = "Year";
+"PagesCount" = "Pages count";
+"Publisher" = "Publisher";
+"AverageRating" = "Average rating";
+"Isbn" = "ISBN";
+"Description" = "Description";
+"ReadBook" = "Read book";

@@ -7,8 +7,7 @@ class AuthorController: UITableViewController {
     private var delegate: AuthorControllerDelegate?
     
     public func setData(data: [String]) {
-        let sortedData: [String] = data.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
-        self.data = sortedData
+        self.data = data
     }
     
     public func setDelegate(delegate: AuthorControllerDelegate?) {

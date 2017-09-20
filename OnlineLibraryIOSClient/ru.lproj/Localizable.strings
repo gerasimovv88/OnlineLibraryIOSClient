@@ -4,3 +4,17 @@
 "Successful" = "Успешно";
 "MainMenu" = "Главное меню";
 "OK" = "Понятно";
+"NotFound" = "Книг не найдено";
+"FindedBooks" = "Найденные книги";
+"Title" = "Название";
+"Author" = "Автор";
+"Genre" = "Жанр";
+"InformationNotAvailable" = "Информация о выбранной книге недоступна";
+"ShowInformationAboutBook" = "Просмотр информации о выбранной книге";
+"Year" = "Год издания";
+"PagesCount" = "Количество страниц";
+"Publisher" = "Издательство";
+"AverageRating" = "Средний рейтинг";
+"Isbn" = "ISBN";
+"Description" = "Описание книги";
+"ReadBook" = "Читать книгу";

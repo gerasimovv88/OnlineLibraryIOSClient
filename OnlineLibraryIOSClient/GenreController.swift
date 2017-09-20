@@ -7,8 +7,7 @@ class GenreController: UITableViewController {
     private var delegate: GenreControllerDelegate?
     
     public func setData(data: [String]) {
-        let sortedData: [String] = data.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
-        self.data = sortedData
+        self.data = data
     }
     
     public func setDelegate(delegate: GenreControllerDelegate?) {
