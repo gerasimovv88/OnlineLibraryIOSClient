@@ -15,6 +15,7 @@ class MainViewController: UIViewController, AuthorControllerDelegate, GenreContr
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NSLocalizedString("MainMenu", comment: "")
+        customSearchButton()
     }
     
     override func didReceiveMemoryWarning() {
@@ -196,5 +197,12 @@ class MainViewController: UIViewController, AuthorControllerDelegate, GenreContr
         let searchBookController = self.storyboard?.instantiateViewController(withIdentifier: "SearchBookController") as! SearchBookController
         searchBookController.setData(data: result)
         self.navigationController?.pushViewController(searchBookController, animated: true)
+    }
+    
+    private func customSearchButton() {
+        searchButton.backgroundColor = UIColor.green
+        searchButton.layer.cornerRadius = 5
+        searchButton.layer.borderWidth = 1
+        searchButton.layer.borderColor = UIColor.black.cgColor
     }
 }

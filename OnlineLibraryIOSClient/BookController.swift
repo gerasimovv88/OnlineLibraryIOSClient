@@ -25,6 +25,7 @@ class BookController: UIViewController {
         self.title = NSLocalizedString("ShowInformationAboutBook", comment: "")
         self.readBookButton.setTitle(NSLocalizedString("ReadBook", comment: ""), for: .normal)
         fillDataOnPage()
+        customReadBookButton()
     }
     
     public func fillDataOnPage() {
@@ -76,5 +77,12 @@ class BookController: UIViewController {
                 readBookController.setUrl(url: url)
             }
         }
+    }
+    
+    private func customReadBookButton() {
+        readBookButton.backgroundColor = UIColor.green
+        readBookButton.layer.cornerRadius = 5
+        readBookButton.layer.borderWidth = 1
+        readBookButton.layer.borderColor = UIColor.black.cgColor
     }
 }
